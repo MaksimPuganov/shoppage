@@ -1,1 +1,22 @@
 footer.footer
+    .footer__top
+        .container
+            .footter__left
+                a(href="#").logo.logo__footer
+                img(src="" alt="Cooltech logo").logo__img
+                .logo__text
+            .footer__right
+                ul.socials.footer__socials
+                    - var icons = ['fb', 'vk', 'tw']
+                    each icon in icons
+                        li(class="socials_item socials_item_" + icon)
+                            a(href="#").socials__link
+                                .socials__icon
+                ul.footer__nav
+                    -var items = ["Планшеты", "Мобильные телефоны", "Мр3 плееры", "Персональные компьютеры", "Ноутбуки", "Аксессуары", "Бытовая техника"]
+                    each item in items
+                        li.footer__nav-item
+                            a(href="#").footer__nav-link= item
+    .footer__bottom
+        .container
+            .footer__copyright All rights reserved. 2015. no copy alowed
