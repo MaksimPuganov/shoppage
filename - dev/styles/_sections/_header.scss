@@ -53,3 +53,36 @@ $socials-map: sprite-map('icons/socials/*.png', $spacing: 70px);
   width: 50%;
 }
 
+.header__left {
+  width: 50%;
+  float: left;
+}
+
+.header__right {
+  width: 50%;
+  float: right;
+}
+
+.address {
+  @include inlineblock(middle);
+  margin-top: 65px;
+
+  &:before {
+    content: '';
+    @include get-sprite($misc-sprite, pin);
+    @include inlineblock(middle);
+    margin-right: 9px;
+  }
+}
+
+.phone {
+  @include inlineblock(middle);
+  margin-top: 63px;
+
+  &:before {
+    content: '';
+    @include get-sprite($misc-sprite, phone);
+    @include inlineblock(middle);
+    margin-right: 9px;
+  }
+}

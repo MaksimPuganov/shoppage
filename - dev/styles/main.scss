@@ -16,6 +16,11 @@
 
 @import "_misc/adjustment";
 
+/* --------- misc icons sprite --------- */
+
+$misc-sprite: sprite-map('icons/_misc/*.png', $spacing: 70px);
+
+
 /* --------- sections --------- */
 
 @import "_sections/header";
