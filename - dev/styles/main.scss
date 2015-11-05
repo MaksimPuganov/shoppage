@@ -22,11 +22,13 @@ $misc-sprite: sprite-map('icons/_misc/*.png', $spacing: 70px);
 
 /* --------- global colors vars --------- */
 
-$black: #333333;
+$black: #333;
+$orange: #ff6600;
+$white: #fff;
 
 /* --------- sections --------- */
 
-@import "_sections/header";
+@import "_sections/**/*";
 
 
 

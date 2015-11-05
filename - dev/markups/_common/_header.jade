@@ -14,7 +14,7 @@ header.header
     .header__bottom
         .container
             a(href="#").logo
-                img(src="" alt="Cooltech logo").logo__img
+                img(src="/img/logos/cooltech.png" alt="Cooltech logo").logo__img
                 .logo__text cooltech
             .search
                 form.search__form
@@ -23,5 +23,6 @@ header.header
             .menu
                 - var items = ["Карта проезда", "История заказов", "Корзина"]
                 ul.menu__list
-                    li.menu__item
-                        a(href="#").menu__link= item
+                    each item in items
+                        li.menu__item
+                            a(href="#").menu__link= item

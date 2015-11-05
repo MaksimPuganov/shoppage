@@ -3,6 +3,6 @@ nav.nav
         -var items = ["Планшеты", "Мобильные телефоны", "Мр3 плееры", "Персональные компьютеры", "Ноутбуки", "Аксессуары", "Бытовая техника"]
         ul.nav__list
             each item in items
-                li(class="nav__item nav_item_" + ((item == "Мобильные телефоны") ? 'active' : ''))
+                li(class="nav__item nav__item_" + ( (item == "Мобильные телефоны") ? 'active' : ''))
                     a(href="#").nav__link= item
 

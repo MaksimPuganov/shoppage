@@ -3,7 +3,7 @@
       ul.categories__list
          - var items = ["Флагманы", "Бюдженая линейка"]
          each item in items
-            li(class="categories__item categories__item_" + ((item == "Бюдженая линейка") ? 'active' : ''))
+            li(class="categories__item " + ((item == "Бюдженая линейка") ? 'active' : ''))
                a(href="#").categories__link= item
    .filter
       ul.filter__list
@@ -15,7 +15,7 @@
                   -var items = ["Во всех магазинах", "В ближайшем ко мне магазине"]
                   each item in items
                      li.filter__choose-item
-                        lablel.filter__choose-lable
+                        label.filter__choose-lable
                            input(name="location" type="radio").filter__choose-input
                            .filter__choose-elem
                            .filter__choose-text= item
