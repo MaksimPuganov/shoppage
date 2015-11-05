@@ -9,13 +9,13 @@
   @include border-radius(5px);
 }
 .categories__list {
-  border: 1px solid #dee1e4;
+  border: 1px solid $grey;
   @include border-radius(5px);
   overflow: hidden;
 }
 
 .categories__item {
-  border-top: 1px solid #dee1e4;
+  border-top: 1px solid $grey;
 
   &:first-child {
     border: 0 none;
@@ -42,16 +42,26 @@
 
 /* --------- filter ---------- */
 
+.filter {
+  background: $white;
+  @include border-radius(5px);
+}
+
 .filter__content {
 
 }
 
 .filter__list {
-  @extend .categories__link;
+  @extend .categories__list;
 }
 
 .filter__item {
-  padding: 12px 14px;
+  padding: 12px 26px;
+  border-top: 1px solid $grey;
+
+  &:first-child {
+    border: 0 none;
+  }
 }
 
 .filter__title {
@@ -67,13 +77,25 @@
   text-decoration: none;
 }
 
+.filter__choose-item {
+  margin-top: 16px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.filter__choose{
+  margin-bottom: 13px;
+}
+
 .filter__choose-lable {
   display: block;
   position: relative;
 }
 
 .filter__choose-elem {
-  border: 3px solid #dee1e4;
+  border: 3px solid $grey;
   width: 13px;
   height: 13px;
   @include border-radius(50%);
@@ -114,4 +136,107 @@
   color: $black;
   max-width: 240px;
   margin-left: 8px;
+}
+
+/* --------- check-box ---------- */
+
+.filter__choose-checkboxes {
+  .filter__choose-input {
+    &:checked + .filter__choose-elem {
+      background: $orange;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .filter__choose-elem {
+    width: 20px;
+    height: 20px;
+    @include border-radius(4px);
+    background: $grey;
+    @include transition(.2s);
+    border: 0 none;
+
+    &:after {
+      content: '';
+      display: block;
+      @include absolute-center;
+      opacity: 0;
+      @include transition(.2s);
+      @include get-sprite($misc-sprite, check);
+      @include border-radius(0);
+      width: 13px !important;
+      height: 13px !important;
+    }
+  }
+}
+
+.filter__reset {
+  color: #5db2fc;
+  @include open-sans();
+  font-size: 14px;
+  line-height: 16px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* --------- colors ---------- */
+
+.filter_colors {
+  margin-left: -10px;
+}
+
+.filter__colors-link {
+  border: 1px solid $grey;
+  width: 37px;
+  height: 37px;
+  display: block;
+}
+
+.filter__colors-item {
+  @include inlineblock();
+  border: 3px solid transparent;
+  @include border-radius(2px);
+  margin-left: 10px;
+  margin-bottom: 8px;
+
+  &:hover {
+    border-color: $orange;
+    @include  transition(.2s);
+  }
+}
+
+/* --------- slider ---------- */
+
+.filter__slider-display {
+  @include clearfix;
+  margin-bottom: 18px;
+}
+
+.filter__slider-left {
+  float: left;
+  width: 50%;
+}
+
+.filter__slider-right {
+  float: right;
+  width: 50%;
+}
+
+.filter__slider-input {
+  @extend .search__form-input;
+  padding: 10px 8px;
+  width: 83px;
+  @include inlineblock(middle);
+  @include border-radius(3px);
+}
+
+.filter__slider-text {
+  @include inlineblock(middle);
+  font-size: 14px;
+  line-height: 16px;
 }

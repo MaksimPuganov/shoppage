@@ -1,15 +1,15 @@
 footer.footer
     .footer__top
         .container
-            .footter__left
+            .footer__left
                 a(href="#").logo.logo__footer
-                img(src="" alt="Cooltech logo").logo__img
+                img(src="/img/logos/cooltech-footer.png" alt="Cooltech logo").logo__img
                 .logo__text
             .footer__right
-                ul.socials.footer__socials
+                ul.socials.socials__footer
                     - var icons = ['fb', 'vk', 'tw']
                     each icon in icons
-                        li(class="socials_item socials_item_" + icon)
+                        li(class="socials__item socials__item_" + icon)
                             a(href="#").socials__link
                                 .socials__icon
                 ul.footer__nav
