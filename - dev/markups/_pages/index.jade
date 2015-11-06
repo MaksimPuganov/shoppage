@@ -9,12 +9,81 @@ block content
 			.main__title
 				| Мобильные телефоны
 			.main__content
-
 				include ../_common/_sidebar
 
 				.content
 					.sort
+						.sort__left
+							.sort__select--wrap
+								.sort__title
+									| Сортировать по
+								.sort__select
+									select.sort__select-elem
+										- var options = ["по цене", "по популярности"]
+										each option in options
+											option(value="")= option
+						.sort__right
+							sort__title
+							| Вид каталога
+							.sort__view
+								ul.sort__view-list
+									- var items = ['rows', 'grids', 'lines']
+									each item in items
+										li(class="sort__view-item sort__view-" + item data-view= item)
+											a(href="#!").sort__view-link
+												.sort__view-icon
 					.products
+						ul.products__list
+							- for (var i = 0; i < 9; i++)
+								li.products__item
+									.products__item-inner
+										.products__left
+											.products__slideshow
+												.products__slideshow-block
+													a(href="#!").products__slideshow-display
+														img(src="http://lorempixel.com/200/200/technics/6" alt="").products__slideshow-img
+													ul.products__slideshow-thumbs
+														- for (var j = 0; j < 3; j++)
+															li.products__slideshow-item
+																a(href="#!").products__slideshow-link
+																	img(src="http://lorempixel.com/45/45/technics/" + j alt="")
+												.products__article
+													.products__article-word Артикл
+													.products__article-num 189238
+											.products__desc
+												.products__desc-title Samsung GT-I9301I GALAXY S 3
+												ul.products__desc-options
+													- var options = {"Тип SIM-карты": "Micro-SIM", "Количество SIM-карт": "1", "Цвет": "Белый", "ОС": "Android", "Свять 3G": "Есть", "4G (LTE)": "Нет", "GPS-модуль": "Есть"}
+													each value, key in options
+														li.products__option-item= key
+														li.products__option-value= value
+												.products__rating
+													ul.products_rating-stars
+														li.products_rating-stars-item.products_rating-stars-item_filled
+														li.products_rating-stars-item.products_rating-stars-item_filled
+														li.products_rating-stars-item.products_rating-stars-item_filled
+														li.products_rating-stars-item.products_rating-stars-item_filled
+														li.products_rating-stars-item
+													.products_rating-amount 3
+										.products__right
+											.products__info
+											.products__info-bottom
+												.products__price 11 290 &#8381;
+													a(href="#!").products__buy-btn В корзину
+													.products__availability
+														| В наличии
+						.pagination
+							ul.pagination__list
+								li.pagination__item.pagination__item_prev
+									a(href="#!").pagination__link
+										.pagination_mark
+								- for (var i = 1; i < 4; i++)
+									li.pagination__item.pagination__item_prev
+										a(href="#!").pagination__link
+											.pagination_mark= i
+								li.pagination__item.pagination__item_next
+									a(href="#!").pagination__link
+										.pagination_mark
 			.attention
 				.main__title
 					| Важная информация

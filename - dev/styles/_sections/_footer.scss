@@ -45,11 +45,18 @@ $footer-socials-map: sprite-map('icons/socials-dark/*.png', $spacing: 70px);
 
   @each $social in $socials {
     .socials__item_#{$social} {
-      .socials__icon {
+      .socials__link {
         &:after {
           @include get-sprite($footer-socials-map, $social);
           content: '';
           @include absolute-center;
+        }
+
+        &:hover {
+          &:after {
+            $icon-hover: $social + '-hover';
+            @include get-sprite($footer-socials-map, $icon-hover);
+          }
         }
       }
     }
@@ -74,7 +81,7 @@ $footer-socials-map: sprite-map('icons/socials-dark/*.png', $spacing: 70px);
 
 .footer__bottom {
   position: absolute;
-  top: 0;
+  top: 186px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -83,4 +90,7 @@ $footer-socials-map: sprite-map('icons/socials-dark/*.png', $spacing: 70px);
   color: $white;
   font-size: 12px;
   line-height: 36px;
+}
+
+.footer__copyright {
 }
