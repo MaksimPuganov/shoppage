@@ -6,7 +6,7 @@
   border: 1px solid $grey;
   @include border-radius(7px);
   overflow: hidden;
-  background: #fff;
+  background: $white;
 }
 
 .products__item {
@@ -26,7 +26,6 @@
 .products__left {
   float: left;
 }
-
 
 .products__slideshow {
   width: 140px;
@@ -110,4 +109,134 @@
   line-height: 16px;
   color: $black;
   @include open-sans(semibold);
+}
+
+/* --------- description --------- */
+
+.products__desc {
+  float: left;
+  width: 380px;
+  margin-left: 25px;
+}
+
+.products__desc-title {
+  font-size: 16px;
+  line-height: 18px;
+  @include open-sans(semibold);
+  color: #010101;
+  margin-bottom: 20px;
+  padding-top: 7px;
+}
+
+.products__desc-options {
+  margin-bottom: 10px;
+}
+
+.products__option-item {
+  display: inline;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.products__option-value {
+  @extend .products__option-item
+}
+
+/* --------- stars rating --------- */
+
+.products_rating-stars {
+  @include inlineblock(middle);
+}
+
+$stars-map: sprite-map('icons/stars/*.png', $spacing: 70px);
+
+.products_rating-stars-item {
+  @include inlineblock(middle);
+  @include get-sprite($stars-map, empty);
+
+  &.products_rating-stars-item_filled {
+      @include get-sprite($stars-map, filled);
+  }
+}
+
+.products_rating-count {
+  @include inlineblock(middle);
+  color: #fbfbfb;
+  font-size: 12px;
+  line-height: 15px;
+  @include open-sans(semibold);
+  background-color: #b5beca;
+  @include border-radius(10px);
+  width: 30px;
+  margin-left: 8px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* --------- prices --------- */
+
+.products__right {
+  position: absolute;
+  top: 23px;
+  bottom: 23px;
+  right: 23px;
+  width: 123px;
+  text-align: center;
+}
+
+.products__info {
+  padding-left: 25px;
+  border-left: 1px solid $grey;
+  height: 100%;
+}
+
+.products__price {
+  font-size: 20px;
+  line-height: 22px;
+  color: $black;
+  @include open-sans(semibold);
+}
+
+.products__info-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.products__buy-btn {
+  @include inlineblock();
+  text-decoration: none;
+  padding: 8px 14px;
+  @include open-sans(bold);
+  @include border-radius(5px);
+  background-color: $orange;
+  @include background-image(linear-gradient(34deg, #f60 0%, #ff6e35 99%, #ff6e35 100%));
+  font-size: 14px;
+  line-height: 20px;
+  color: $white;
+  margin-bottom: 9px;
+}
+
+.products__availability {
+  color: #7f7f7f;
+  font-size: 12px;
+  line-height: 20px;
+  @include open-sans(bold);
+
+  &:before {
+    content: '';
+    @include inlineblock(middle);
+    width: 7px;
+    height: 7px;
+    @include border-radius(50%);
+    background-color: #60ac49;
+    margin-right: 8px;
+  }
+}
+
+.rub {
+  text-decoration: none;
+  @include open-sans();
+  font-style: normal;
+  margin-left: 5px;
 }
