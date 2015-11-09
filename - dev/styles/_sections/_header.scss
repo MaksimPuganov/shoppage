@@ -32,7 +32,7 @@
 }
 
 $socials: fb, vk, tw;
-$socials-map: sprite-map('icons/socials/*.png', $spacing: 70px);
+$socials-map: sprite-map("icons/socials/*.png", $spacing: 70px);
 
 @each $social in $socials {
   .socials__item_#{$social} {

@@ -54,7 +54,12 @@
   @include absolute-center;
 }
 
-$views-map: sprite-map('icons/views/*.png', $spacing: 70px);
+.sort__select--wrap {
+  padding-top: 11px;
+  padding-left: 20px;
+}
+
+$views-map: sprite-map("icons/views/*.png", $spacing: 70px);
 $views: rows, grids, lines;
 
 @each $view in $views {
@@ -64,7 +69,7 @@ $views: rows, grids, lines;
     }
 
     &:hover {
-      $view-hover: $view + '-hover';
+      $view-hover: $view + "-hover";
 
       .sort__view-icon {
         @include get-sprite($views-map, $view-hover);
