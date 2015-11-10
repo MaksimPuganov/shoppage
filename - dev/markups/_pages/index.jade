@@ -32,7 +32,7 @@ block content
 										li(class="sort__view-item sort__view-" + item data-view= item)
 											a(href="#!").sort__view-link
 												.sort__view-icon
-					.products.products__grids
+					.products.products__lines
 						ul.products__list
 							- for (var i = 0; i < 9; i++)
 								li.products__item
@@ -54,9 +54,11 @@ block content
 												.products__desc-title Samsung GT-I9301I GALAXY S 3
 												ul.products__desc-options
 													- var options = {"Тип SIM-карты": "Micro-SIM", "Количество SIM-карт": "1", "Цвет": "Белый", "ОС": "Android", "Свять 3G": "Есть", "4G (LTE)": "Нет", "GPS-модуль": "Есть"}
-													each value, key in options
-														li.products__option-item= key
-														li.products__option-value= value
+													- var index=0;
+													- for (item in options)
+														li(class="products__option-item " + (!(index++ % 2) ? 'products__option-item_grey' : ''))
+															.products__option-key= item
+															.products__option-value= options[item]
 												.products__rating
 													ul.products_rating-stars
 														li.products_rating-stars-item.products_rating-stars-item_filled
@@ -78,7 +80,10 @@ block content
 								li.pagination__item.pagination__item_prev
 									a(href="#!").pagination__link
 										.pagination_mark
-								- for (var i = 1; i < 4; i++)
+								li.pagination__item
+									a(href="#!").pagination__link.active
+										.pagination_mark= 1
+								- for (var i = 2; i < 4; i++)
 									li.pagination__item
 										a(href="#!").pagination__link
 											.pagination_mark= i

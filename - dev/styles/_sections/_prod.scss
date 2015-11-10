@@ -133,13 +133,18 @@
 }
 
 .products__option-item {
+  color: $black;
+  display: inline-block;
+}
+
+.products__option-key {
   display: inline;
   font-size: 14px;
   line-height: 16px;
 }
 
 .products__option-value {
-  @extend .products__option-item
+  @extend .products__option-key
 }
 
 /* --------- stars rating --------- */
