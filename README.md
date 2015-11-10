@@ -5,4 +5,5 @@ required: ruby;
 3. gem install compass
 4. gem install sass-globbing
 5. npm install
-6. gulp
+6. bower i jquery-ui
+7. gulp

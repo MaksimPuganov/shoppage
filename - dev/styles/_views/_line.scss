@@ -13,21 +13,27 @@
     margin-top: 8px;
     height: auto;
     float: left;
+    @include inlineblock(middle);
   }
 
   .products__item-inner {
     padding: 0;
     padding-top: 10px;
     padding-bottom: 10px;
+
+    &:hover {
+      @include box-shadow(0 1px 7.2px 0.8px rgba(153, 153, 153, 0.75));
+    }
   }
 
   .products__left {
     margin-top: 8px;
+    width: 390px;
   }
 
   .products__desc {
     margin-left: 0;
-    width: auto;
+    width: 225px;
   }
 
   .products__desc-title {
@@ -35,6 +41,9 @@
     margin-bottom: 0;
     line-height: 25px;
     @include open-sans();
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .products__right {
@@ -45,14 +54,16 @@
 
 
   .products__buy-btn {
-    float: left;
-    margin-left: 10px;
+    float: right;
     margin-bottom: 0;
+    @include inlineblock(middle);
+    margin-right: 15px;
   }
 
   .products__availability {
+    float: left;
     margin-left: 10px;
-    line-height: 34px;
+    line-height: 36px;
   }
 }
 
