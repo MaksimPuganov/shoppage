@@ -27,9 +27,16 @@ $orange: #ff6600;
 $white: #fff;
 $grey: #dee1e4;
 
+/* --------- plugins --------- */
+
+@import "_plugins/**/*";
+
+/* --------- widgets --------- */
+
+@import "_widgets/**/*";
+
 /* --------- sections --------- */
 
 @import "_sections/**/*";
-
 
 

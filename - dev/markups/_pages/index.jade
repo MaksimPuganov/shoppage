@@ -32,7 +32,7 @@ block content
 										li(class="sort__view-item sort__view-" + item data-view= item)
 											a(href="#!").sort__view-link
 												.sort__view-icon
-					.products.products__lines
+					.products#products-list
 						ul.products__list
 							- for (var i = 0; i < 9; i++)
 								li.products__item
@@ -59,14 +59,14 @@ block content
 														li(class="products__option-item " + (!(index++ % 2) ? 'products__option-item_grey' : ''))
 															.products__option-key= item
 															.products__option-value= options[item]
-												.products__rating
-													ul.products_rating-stars
-														li.products_rating-stars-item.products_rating-stars-item_filled
-														li.products_rating-stars-item.products_rating-stars-item_filled
-														li.products_rating-stars-item.products_rating-stars-item_filled
-														li.products_rating-stars-item.products_rating-stars-item_filled
-														li.products_rating-stars-item
-													.products_rating-count 3
+												div(class="products__rating" data-rating="4")
+													//ul.products_rating-stars
+													//	li.products_rating-stars-item.products_rating-stars-item_filled
+													//	li.products_rating-stars-item.products_rating-stars-item_filled
+													//	li.products_rating-stars-item.products_rating-stars-item_filled
+													//	li.products_rating-stars-item.products_rating-stars-item_filled
+													//	li.products_rating-stars-item
+													//.products_rating-count 3
 										.products__right
 											.products__info
 												.products__price 11 290

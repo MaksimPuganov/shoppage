@@ -195,12 +195,13 @@
   width: 37px;
   height: 37px;
   display: block;
+  @include border-radius();
 }
 
 .filter__colors-item {
   @include inlineblock();
   border: 3px solid transparent;
-  @include border-radius(2px);
+  @include border-radius();
   margin-left: 10px;
   margin-bottom: 8px;
 

@@ -75,5 +75,13 @@ $views: rows, grids, lines;
         @include get-sprite($views-map, $view-hover);
       }
     }
+
+    &.active {
+      $view-hover: $view + "-hover";
+
+      .sort__view-icon {
+        @include get-sprite($views-map, $view-hover);
+      }
+    }
   }
 }

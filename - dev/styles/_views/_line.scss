@@ -48,7 +48,7 @@
 
   .products__right {
     float: right;
-    width: 42%;
+    width: 45%;
     @include inlineblock(middle);
   }
 
@@ -62,7 +62,7 @@
 
   .products__availability {
     float: left;
-    margin-left: 10px;
+    margin-left: 25px;
     line-height: 36px;
   }
 }
