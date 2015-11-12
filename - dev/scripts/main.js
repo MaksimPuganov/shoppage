@@ -125,7 +125,75 @@ var viewStateChange = (function () {
     }
 }());
 
+var slideShow = (function () {
+
+    var _changeSlide = function ($this) {
+        var container = $this.closest('.products__slideshow'),
+            path = $this.find('img').attr('src'),
+            display = container.find('.products__slideshow-img');
+
+        $this.closest('.products__slideshow-item').addClass('active')
+            .siblings().removeClass('active');
+
+        display.fadeOut(function () {
+            $(this).attr('src', path).fadeIn();
+        })
+    };
+
+    return {
+        init : function () {
+            $('.products__slideshow-link').on('click', function (e) {
+                e.preventDefault();
+
+                var $this = $(this);
+
+                _changeSlide($this);
+            });
+        }
+    }
+}());
+
+var accordeon = (function () {
+
+    var _openSection = function ($this) {
+        var container = $this.closest('.filter__item'),
+            content = container.find('.filter__content'),
+            otherContent = $this.closest('.filter').find('.filter__content');
+
+
+        if (!container.hasClass('active')) {
+            otherContent.slideUp().closest('.filter__item').removeClass('active');
+
+            container.addClass('active');
+            content.slideDown();
+        } else {
+            container.stop(true,true).removeClass('active');
+            content.stop(true,true).slideUp();
+        }
+
+    };
+
+    return {
+        init : function () {
+            $('.filter__title-link').on('click', function (e) {
+                e.preventDefault();
+                console.log('Запуск openSection');
+                _openSection($(this));
+            });
+        }
+    }
+}());
+
+
 $(document).ready(function() {
+
+    if ($('.filter').length) {
+        accordeon.init();
+    }
+
+    if ($('.products__slideshow').length) {
+        slideShow.init();
+    }
 
     viewStateChange.init();
 
@@ -142,5 +210,21 @@ $(document).ready(function() {
             minimumResultsForSearch: Infinity
         });
     }
+
+    $('.filter__reset').on('click', function (e) {
+        e.preventDefault();
+
+        var $this = $(this),
+            container = $this.closest('.filter__item'),
+            checkboxes = container.find('input:checkbox');
+
+        checkboxes.each(function () {
+            $(this).removeProp('checked');
+        });
+    })
+
+    $('.attention__text').columnize({
+        columns: 2
+    });
 
 });

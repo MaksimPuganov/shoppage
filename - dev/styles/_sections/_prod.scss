@@ -15,6 +15,10 @@
   &:first-child {
     border-top: 0 none;
   }
+
+  &:hover {
+    @include box-shadow(0 1px 7.2px 0.8px rgba(153, 153, 153, 0.75));
+  }
 }
 
 .products__item-inner {

@@ -5,14 +5,14 @@
     line-height: 20px;
     margin-bottom: 20px;
   }
-}
 
-.attention__text_left {
-  width: 48%;
-  float: left;
-}
+  .column {
+    &.first {
+      float: left !important;
+    }
 
-.attention__text_right {
-  width: 48%;
-  float: right;
+    &.last {
+      float: right !important;
+    }
+  }
 }

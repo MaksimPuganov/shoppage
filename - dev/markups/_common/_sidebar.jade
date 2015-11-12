@@ -28,7 +28,7 @@
                   each item in items
                      li.filter__choose-item
                         label.filter__choose-lable
-                           input(name="" type="radio").filter__choose-input
+                           input(name="" type="checkbox").filter__choose-input
                            .filter__choose-elem
                            .filter__choose-text= item
                .filter__reset--wrap
@@ -59,12 +59,12 @@
             .filter__title
                a(href="#").filter__title-link Операционная система
             .filter__content
-               ul.filter__choose.filter__choose_checkboxes
+               ul.filter__choose.filter__choose-checkboxes
                   - var items = ["Android", "iOS", "Windows Mobile", "Symbian", "Custom"]
                   each item in items
                      li.filter__choose-item
                         label.filter__choose-lable
-                           input(name="brand" type="radio").filter__choose-input
+                           input(name="brand" type="checkbox").filter__choose-input
                            .filter__choose-elem
                            .filter__choose-text= item
                .filter__reset--wrap
