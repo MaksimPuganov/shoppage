@@ -1,4 +1,4 @@
-var sliderWidget =(function() {
+sliderWidget =(function() {
 
     var _insertValues = function ($this) {
         var
@@ -40,7 +40,7 @@ var sliderWidget =(function() {
 }());
 
 
-var ratingWidget = (function () {
+ratingWidget = (function () {
 
     var _letTheStars = function (ratingAmount) {
         var
@@ -90,7 +90,7 @@ var ratingWidget = (function () {
     }
 }());
 
-var viewStateChange = (function () {
+viewStateChange = (function () {
 
     var _prevClass = '';
     
@@ -125,7 +125,7 @@ var viewStateChange = (function () {
     }
 }());
 
-var slideShow = (function () {
+slideShow = (function () {
 
     var _changeSlide = function ($this) {
         var container = $this.closest('.products__slideshow'),
@@ -153,7 +153,7 @@ var slideShow = (function () {
     }
 }());
 
-var accordeon = (function () {
+accordeon = (function () {
 
     var _openSection = function ($this) {
         var container = $this.closest('.filter__item'),

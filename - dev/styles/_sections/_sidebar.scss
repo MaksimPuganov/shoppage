@@ -98,8 +98,10 @@
   font-size: 16px;
   line-height: 18px;
   @include open-sans(semibold);
-  margin-top: 18px;
+  margin-top: 5px;
   text-decoration: none;
+  width: 100%;
+  display: block;
 }
 
 .filter__choose-item {
